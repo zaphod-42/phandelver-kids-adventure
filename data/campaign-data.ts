@@ -1,3 +1,5 @@
+import type { WildMagicSurge, NPCQuick, DMTip } from '@/types/campaign';
+
 export const wildMagicSurges: WildMagicSurge[] = [
   {
     id: 1,
