@@ -6,6 +6,7 @@ A web-based companion app designed specifically for running **Lost Mine of Phand
 
 This is a **companion tool**, not a replacement for your DM screen and notes. It provides:
 
+- **📜 Story Tracker** - Track chapters, quests, locations, and objectives with your own notes
 - **⚔️ Combat Tracker** - Quick initiative and HP management without complicated spreadsheets
 - **✨ Wild Magic Generator** - Kid-friendly, fun magical effects (20 custom surges!)
 - **🥚 Dragon Egg Progress** - Visual tracker for the Ranger's dragon egg warming up
@@ -39,10 +40,20 @@ npm start
 
 ### Before the Session
 1. Open the app on a tablet, phone, or laptop
-2. Review the **DM Tips** tab for your session focus
-3. Check the **Quick Reference** for common DCs and conditions
+2. Review the **Story** tab to see where you left off
+3. Check the **DM Tips** tab for your session focus
+4. Review the **Quick Reference** for common DCs and conditions
 
-### During Combat
+### During the Session
+**Story Tracking:**
+1. Switch to the **Story** tab
+2. Mark chapter status (Not Started → In Progress → Completed)
+3. Check off objectives as the party completes them
+4. Add session notes in the notes section
+5. Update quest status as they progress
+6. Mark locations as discovered
+
+**During Combat:**
 1. Switch to the **Combat** tab
 2. Click "+ Ranger" and "+ Sorcerer" to add the players
 3. Click "+ Goblin" or "+ Other Enemy" for monsters
@@ -114,14 +125,22 @@ The app includes quick reference cards for:
 
 Check the **DM Tips** tab → scroll down to see all NPCs with voice notes and engagement tips!
 
-## 🛠️ Tech Stack
-
-- **Next.js 15** (React framework)
-- **TypeScript** (type safety)
-- **Tailwind CSS** (styling)
-- **shadcn/ui** (beautiful components)
-
 ## 📝 Customization
+
+### Adding Story Content from Your Book
+
+The app comes with a template structure for Lost Mine of Phandelver. **You need to fill in the details from your own adventure book:**
+
+1. Open `/data/story-data.ts`
+2. Replace the placeholder text with your own summaries:
+   - Chapter descriptions
+   - Quest details
+   - Location descriptions
+   - Encounter notes
+   - Treasure lists
+   - Secrets and DM notes
+
+**Important:** The app provides the framework - you add the content from your purchased materials. This keeps your personal notes organized while respecting copyright.
 
 ### Adding Your Own Wild Magic Surges
 Edit `/data/campaign-data.ts` and add to the `wildMagicSurges` array:
@@ -142,6 +161,19 @@ Edit the `lmopNPCs` array in the same file.
 
 ### Adjusting DM Tips
 Edit the `dmTipsForKids` array to add your own discoveries and notes.
+
+### Adding More Chapters, Quests, or Locations
+The templates in `/data/story-data.ts` can be expanded:
+- Add more chapters for continued adventures (Shattered Obelisk, etc.)
+- Add side quests your players discover
+- Add custom locations you create
+
+## 🛠️ Tech Stack
+
+- **Next.js 15** (React framework)
+- **TypeScript** (type safety)
+- **Tailwind CSS** (styling)
+- **shadcn/ui** (beautiful components)
 
 ## 🎉 Have Fun!
 

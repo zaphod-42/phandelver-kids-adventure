@@ -8,7 +8,9 @@ import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { wildMagicSurges, lmopNPCs, dmTipsForKids, quickReferenceDCs, conditions } from '@/data/campaign-data';
+import { storyChaptersTemplate, locationsTemplate, questsTemplate } from '@/data/story-data';
 import type { CombatantTracker } from '@/types/campaign';
+import StoryTracker from '@/components/StoryTracker';
 
 export default function DMCompanion() {
   const [combatants, setCombatants] = useState<CombatantTracker[]>([]);
@@ -65,14 +67,23 @@ export default function DMCompanion() {
           <p className="text-sm text-blue-300 mt-2">Dragonborn Ranger & Tabaxi Wild Magic Sorcerer</p>
         </header>
 
-        <Tabs defaultValue="combat" className="w-full">
-          <TabsList className="grid w-full grid-cols-5 mb-6 bg-black/30">
+        <Tabs defaultValue="story" className="w-full">
+          <TabsList className="grid w-full grid-cols-6 mb-6 bg-black/30">
+            <TabsTrigger value="story">📜 Story</TabsTrigger>
             <TabsTrigger value="combat">⚔️ Combat</TabsTrigger>
             <TabsTrigger value="wildmagic">✨ Wild Magic</TabsTrigger>
             <TabsTrigger value="egg">🥚 Dragon Egg</TabsTrigger>
             <TabsTrigger value="reference">📖 Reference</TabsTrigger>
             <TabsTrigger value="tips">💡 DM Tips</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="story" className="space-y-4">
+            <StoryTracker 
+              initialChapters={storyChaptersTemplate}
+              initialLocations={locationsTemplate}
+              initialQuests={questsTemplate}
+            />
+          </TabsContent>
 
           <TabsContent value="combat" className="space-y-4">
             <Card className="bg-black/40 border-red-500/30">
