@@ -105,17 +105,17 @@ export default function StoryTracker({
               <Card key={chapter.id} className="bg-black/40 border-blue-500/30">
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl font-bold text-blue-400">
-                        {chapter.number}
-                      </span>
-                      <div>
-                        <CardTitle className="text-xl">{chapter.title}</CardTitle>
-                        <CardDescription className="mt-1">
-                          {chapter.description}
-                        </CardDescription>
+                      <div className="flex items-center gap-3">
+                        <span className="text-3xl font-bold text-blue-400">
+                          {chapter.number}
+                        </span>
+                        <div>
+                          <CardTitle className="text-xl text-white">{chapter.title}</CardTitle>
+                          <CardDescription className="mt-1 text-gray-300">
+                            {chapter.description}
+                          </CardDescription>
+                        </div>
                       </div>
-                    </div>
                     <div className="flex gap-2">
                       <Button
                         size="sm"
@@ -169,7 +169,7 @@ export default function StoryTracker({
                               onChange={() => toggleObjective(chapter.id, objective.id)}
                               className="w-5 h-5 cursor-pointer"
                             />
-                            <span className={objective.completed ? 'line-through text-gray-500' : ''}>
+                            <span className={objective.completed ? 'line-through text-gray-500' : 'text-white'}>
                               {objective.text}
                             </span>
                             {objective.optional && (
@@ -269,7 +269,7 @@ export default function StoryTracker({
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <h4 className="font-bold text-lg">{quest.title}</h4>
+                            <h4 className="font-bold text-lg text-white">{quest.title}</h4>
                             <Badge className={getStatusColor(quest.status)}>
                               {quest.status}
                             </Badge>
@@ -358,7 +358,7 @@ export default function StoryTracker({
                             {location.discovered ? '✅' : '❓'}
                           </span>
                           <div>
-                            <h4 className="font-bold text-lg">{location.name}</h4>
+                            <h4 className="font-bold text-lg text-white">{location.name}</h4>
                             <p className="text-sm text-gray-400">{location.description}</p>
                           </div>
                         </div>

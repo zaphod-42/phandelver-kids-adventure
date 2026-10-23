@@ -144,7 +144,7 @@ export default function DMCompanion() {
                               <Badge className="text-lg font-bold bg-yellow-500 text-black">
                                 {combatant.initiative}
                               </Badge>
-                              <span className="font-bold text-lg">{combatant.name}</span>
+                              <span className="font-bold text-lg text-white">{combatant.name}</span>
                               <Badge variant="outline">AC {combatant.ac}</Badge>
                             </div>
                             <Button
